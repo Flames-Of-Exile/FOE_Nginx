@@ -15,7 +15,7 @@ jobs:
       run: |
         REGISTRY="docker.pkg.github.com"
         IMAGE="${REGISTRY}/${{ github.repository }}/${{ github.event.repository.name }}"
-        TAGS="${IMAGE,,}:${{ github.sha:0:6 }}"
+        TAGS="${IMAGE,,}:${{ github.sha }:0:6}"
         TAGS="${TAGS},${IMAGE,,}:latest"
         echo ::set-output name=tags::${TAGS}
     - name: Docker Buildx setup
