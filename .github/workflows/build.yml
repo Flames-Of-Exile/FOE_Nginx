@@ -24,8 +24,8 @@ jobs:
     - name: Login in to registry
       uses: docker/login-action@v1
       with:
-        registry: docker.pkg.github.com
-        username: ${{ secrets.repository_owner }}
+        registry: ghcr.io
+        username: ${{ secrets.CR_USERNAME }}
         password: ${{ secrets.CR_PAT }}
     - name: Push to registry
       uses: docker/build-push-action@v2
