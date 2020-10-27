@@ -32,4 +32,4 @@ jobs:
           file: ./dockerfile.prod
           platforms: linux/amd64,linux/arm64,linux/386
           push: true
-          tags: docker.pkg.github.com/flames-of-exile/foe_nginx/nginx:latest
+          tags: flames-of-exile/foe_nginx/nginx:latest
