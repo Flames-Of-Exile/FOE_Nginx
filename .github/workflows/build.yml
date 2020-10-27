@@ -13,11 +13,9 @@ jobs:
     - name: Preparation
       id: prep
       run: |
-        REGISTRY="ghcr.io"
-        IMAGE="${REGISTRY}/${{ github.event.repository.name }}"
+        IMAGE="ghcr.io/flames-of-exile/foe_nginx"
         SHA="${{ github.sha }}"
-        TAGS="${IMAGE,,}:${SHA:0:6}"
-        TAGS="${TAGS},${IMAGE,,}:latest"
+        TAGS="${IMAGE}:${SHA:0:6},${IMAGE}:latest"
         echo ::set-output name=tags::${TAGS}
     - name: Docker Buildx setup
       uses: docker/setup-buildx-action@v1
